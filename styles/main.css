@@ -1,0 +1,218 @@
+/*
+  main.css
+  This file controls how the website looks (colors, spacing, animations).
+  You can edit values here to change the site's appearance without touching JavaScript.
+*/
+
+/* Custom styles for React Static App */
+
+:root {
+  --primary-color: #0d6efd;
+  --secondary-color: #6c757d;
+  --success-color: #198754;
+  --info-color: #0dcaf0;
+  --warning-color: #ffc107;
+  --danger-color: #dc3545;
+  --light-color: #f8f9fa;
+  --dark-color: #212529;
+}
+
+/* General page text and layout */
+body {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  line-height: 1.6;
+  color: #333;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+main {
+  flex: 1;
+}
+
+/* Header styles (top bar area) */
+header {
+  box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
+
+.nav-link {
+  transition: all 0.3s ease;
+  cursor: pointer;
+}
+
+.nav-link:hover {
+  background-color: rgba(255,255,255,0.1) !important;
+  border-radius: 4px;
+  transform: translateY(-1px);
+}
+
+.nav-link.active {
+  background-color: rgba(255,255,255,0.2) !important;
+  font-weight: 600;
+}
+
+/* Header navigation buttons */
+header .nav-link {
+  border: none;
+  background: transparent;
+  color: white;
+  padding: 8px 16px;
+  border-radius: 4px;
+  margin-right: 4px;
+}
+
+header .nav-link:hover {
+  background-color: rgba(255,255,255,0.1) !important;
+}
+
+header .nav-link.active {
+  background-color: rgba(255,255,255,0.2) !important;
+  color: white;
+}
+
+/* Card styles (content boxes) */
+.card {
+  border: none;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.card:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+}
+
+/* Button styles (clickable buttons) */
+.btn {
+  border-radius: 8px;
+  font-weight: 500;
+  transition: all 0.3s ease;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
+
+.btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 8px rgba(0,0,0,0.15);
+}
+
+.btn-lg {
+  padding: 12px 24px;
+  font-size: 1.1rem;
+}
+
+/* Tab styles (top navigation buttons) */
+.nav-tabs .nav-link {
+  border-radius: 6px 6px 0 0;
+  margin-right: 2px;
+}
+
+.nav-tabs .nav-link.active {
+  background-color: var(--primary-color);
+  border-color: var(--primary-color);
+  color: white;
+}
+
+/* Counter component (button sizing) */
+.btn-group .btn {
+  min-width: 40px;
+}
+
+/* Form styles (input focus glow and shape) */
+.form-control {
+  border-radius: 6px;
+  border: 1px solid #dee2e6;
+  transition: border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.form-control:focus {
+  border-color: var(--primary-color);
+  box-shadow: 0 0 0 0.2rem rgba(13, 110, 253, 0.25);
+}
+
+/* Footer styles (bottom area) */
+footer {
+  margin-top: auto;
+}
+
+footer a:hover {
+  color: var(--info-color) !important;
+}
+
+/* Animation classes (fade-in effect) */
+.fade-in {
+  animation: fadeIn 0.5s ease-in;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Responsive adjustments (make things look good on phones/tablets) */
+@media (max-width: 768px) {
+  .display-6 {
+    font-size: 1.5rem;
+  }
+  
+  .card-body {
+    padding: 1rem;
+  }
+  
+  .btn-group {
+    width: 100%;
+  }
+  
+  .btn-group .btn {
+    flex: 1;
+  }
+}
+
+/* Loading animation (spinning circle) */
+.loading {
+  display: inline-block;
+  width: 20px;
+  height: 20px;
+  border: 3px solid rgba(255,255,255,.3);
+  border-radius: 50%;
+  border-top-color: #fff;
+  animation: spin 1s ease-in-out infinite;
+}
+
+@keyframes spin {
+  to { transform: rotate(360deg); }
+}
+
+/* Utility classes (small helpers you can reuse) */
+.text-shadow {
+  text-shadow: 1px 1px 2px rgba(0,0,0,0.3);
+}
+
+.border-gradient {
+  border: 2px solid;
+  border-image: linear-gradient(45deg, var(--primary-color), var(--info-color)) 1;
+}
+
+/* Custom scrollbar (how the scroll bar looks) */
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: #f1f1f1;
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--primary-color);
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #0b5ed7;
+}
